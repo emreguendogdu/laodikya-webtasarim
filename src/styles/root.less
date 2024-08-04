@@ -8,14 +8,16 @@
 @media only screen and (min-width: 0em) {
   // Website colors
   :root {
-    --primary: hsl(80, 90%, 55%);
-    --primaryLight: hsl(80, 60%, 40%);
+    --primary: #2885d2;
+    --primaryLight: hsl(207, 68%, 69%);
     --secondary: #001f3f;
     --secondaryLight: #001f3f;
     --headerColor: #1a1a1a;
     --bodyTextColor: #4e4b66;
     --bodyTextColorWhite: #fafbfc;
 
+    --convertBlackToPrimary: invert(48%) sepia(62%) saturate(610%)
+      hue-rotate(165deg) brightness(86%) contrast(97%);
     /* 13px - 16px */
     --topperFontSize: clamp(0.8125rem, 1.6vw, 1rem);
     /* 31px - 49px */
@@ -65,9 +67,10 @@
     width: auto;
     height: (50/16rem);
     padding: 0 (30/16rem);
+    border-radius: 8px;
 
     // Transition Properties
-    color: #000;
+    color: white;
     background-color: var(--primary);
     display: inline-block;
     position: relative;
@@ -97,6 +100,14 @@
       z-index: -1;
       transition: width 0.3s;
     }
+  }
+
+  .cs-color {
+    color: var(--primary);
+  }
+
+  .cs-icon {
+    filter: var(--convertBlackToPrimary);
   }
 }
 
@@ -140,7 +151,7 @@
 
   body,
   html {
-    font-family: "Roboto", Arial, sans-serif;
+    font-family: "Roboto", system-ui, sans-serif;
     font-size: 100%;
     margin: 0;
     padding: 0;
@@ -302,6 +313,78 @@
   }
 }
 
+// List 10-75
 
+/* Mobile - 360px */
+/* you can copy and paste these styles into the section CSS where you placed the #list-1075 HTML, or you can place it in your global stylesheet so you can reuse the HTML in any Side By Side section on your site. That way when you make changes to it, it will also change everywhere in the site */
+@media only screen and (min-width: 0rem) {
+  #list-1075 {
+    max-width: (630/16rem);
+    margin: 0 0 (32/16rem) 0;
+    padding: 0;
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+    flex-wrap: wrap;
+    gap: (24/16rem);
 
+    .cs-li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+      gap: (20/16rem);
+    }
 
+    .cs-icon {
+      width: (48/16rem);
+      height: (48/16rem); 
+      display: block;
+    }
+
+    .cs-h3 {
+      /* 20px - 25px */
+      font-size: clamp(1.25rem, 2.5vw, 1.5625rem);
+      line-height: 1.2em;
+      font-weight: 700;
+      text-align: left;
+      margin: 0 0 (12/16rem) 0;
+      color: var(--headerColor);
+    }
+
+    .cs-li-text {
+      /* 14px - 16px */
+      font-size: clamp(0.875rem, 1.8vw, 1rem);
+      line-height: 1.5em;
+      text-align: left;
+      margin: 0;
+      color: var(--bodyTextColor);
+    }
+  }
+}
+
+@media only screen and (min-width: 64rem) {
+  #list-1075 {
+    flex-direction: row;
+    .cs-li {
+      width: 45%;
+    }
+  }
+}
+/* Dark Mode, copy and paste only the styles inside the #list-1075 brackets into your section's dark mode media query */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    #list-1075 {
+      .cs-h3,
+      .cs-li-text {
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-li-text {
+        opacity: 0.8;
+      }
+    }
+  }
+}

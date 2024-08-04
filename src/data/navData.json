@@ -1,36 +1,39 @@
 [
   {
-    "key": "Home",
+    "key": "Anasayfa",
     "url": "/",
     "children": []
   },
   {
-    "key": "About Us",
-    "url": "/about/",
+    "key": "Hakkımızda",
+    "url": "/hakkimizda/",
     "children": []
   },
   {
-    "key": "Projects",
-    "url": "/projects/",
+    "key": "Hizmetlerimiz",
+    "url": "/iletisim/",
     "children": [
       {
-        "key": "Project 1",
-        "url": "/projects/project-1/"
+        "key": "Web Tasarım",
+        "url": "/iletisim/"
       },
       {
-        "key": "Project 2",
-        "url": "/projects/project-2/"
+        "key": "E-Ticaret Sitesi",
+        "url": "/iletisim/"
+      },
+      {
+        "key": "Sosyal Medya Yönetimi",
+        "url": "/iletisim/"
+      },
+      {
+        "key": "Sosyal Medya Pazarlama",
+        "url": "/iletisim/"
       }
     ]
   },
   {
-    "key": "Reviews",
-    "url": "/reviews/",
+    "key": "İletişim",
+    "url": "/iletisim/",
     "children": []
-  },
-  {
-    "key": "Blog",
-    "url": "/blog/",
-    "children": []     
   }
 ]

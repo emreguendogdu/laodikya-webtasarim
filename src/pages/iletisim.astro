@@ -1,21 +1,15 @@
 ---
-import BaseLayout from "src/layouts/BaseLayout.astro";
-import client from "@data/client.json";
-import Landing from "@components/Landing.astro";
-
+import BaseLayout from "src/layouts/BaseLayout.astro"
+import client from "@data/client.json"
+import Landing from "@components/Landing.astro"
 ---
 
-<BaseLayout
-  title="Contact"
-  description="Meta description for the page"
->
+<BaseLayout title="Contact" description="Meta description for the page">
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
 
-  <Landing 
-    title="Contact"
-  />
+  <Landing title="İletişim" />
 
   <!-- ============================================ -->
   <!--                Contact Form                  -->
@@ -25,62 +19,36 @@ import Landing from "@components/Landing.astro";
     <div class="cs-container">
       <form id="cs-form" name="Contact Form" method="post">
         <div class="cs-content">
-          <span class="cs-topper">Contact</span>
-          <h2 class="cs-title">Get in Touch</h2>
+          <span class="cs-topper">İletişim</span>
+          <h2 class="cs-title">Bize Ulaş</h2>
           <p class="cs-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ridiculus
-            elementum ullamcorper ipsum porttitor aliquam. Id magna urna
-            ultrices odio pulvinar. Sed ut.
+            İşletmeniz için en iyi dijital çözümü üretmek için buradayız. Ne
+            kadar meşgul olduğunuzu biliyoruz, sadece işinizle ilgilenip geri
+            kalanı bize bırakın. Aşağıdaki formu doldurun ve en kısa sürede
+            sizinle iletişime geçelim.
           </p>
         </div>
         <label>
-          Name
-          <input
-            required
-            type="text"
-            id="name"
-            name="name"
-            placeholder="Name"
-          />
+          Adınız
+          <input required type="text" id="name" name="name" />
+        </label>
+        <label>
+          İşletmeniz
+          <input required type="text" id="business" name="business" />
         </label>
         <label>
           Email
-          <input
-            required
-            type="text"
-            id="email"
-            name="email"
-            placeholder="Email"
-          />
+          <input required type="text" id="email" name="email" />
         </label>
         <label>
-          Phone
-          <input
-            required
-            type="text"
-            id="phone"
-            name="phone"
-            placeholder="Phone"
-          />
-        </label>
-        <label>
-          How Did You Find Us
-          <input
-            type="text"
-            id="find"
-            name="find-us"
-            placeholder="How did you find us?"
-          />
+          Telefon Numaranız
+          <input required type="text" id="phone" name="phone" />
         </label>
         <label class="cs-label-message">
-          Message
-          <textarea
-            required
-            name="Message"
-            id="message"
-            placeholder="Write message..."></textarea>
+          Mesajınız
+          <textarea required name="Message" id="message"></textarea>
         </label>
-        <button class="cs-button-solid" type="submit">Submit Message</button>
+        <button class="cs-button-solid" type="submit">Yolla &gt;</button>
       </form>
       <div class="cs-right-section">
         <!--Email-->
@@ -92,7 +60,7 @@ import Landing from "@components/Landing.astro";
           >{client.phoneFormatted}</a
         >
         <!--Address-->
-        <span class="cs-header">Address</span>
+        <!-- <span class="cs-header">Address</span>
         <a class="cs-link" href={client.address.mapLink}>
           {client.address.lineOne},
           <br />
@@ -103,19 +71,23 @@ import Landing from "@components/Landing.astro";
             {client.address.state}
             {client.address.zip}
           </span>
-        </a>
+        </a> -->
 
         <!-- Background Image-->
         <picture class="cs-bg-picture">
           <source
+            media="(max-width: 600px)"
+            src="/assets/images/footer-right-m.webp"
+          />
+          <source
             media="(min-width: 601px)"
-            srcset="/assets/images/skyscraper.jpg"
+            src="/assets/images/footer-right.webp"
           />
           <img
             aria-hidden="true"
             decoding="async"
-            src="/assets/images/skyscraper.jpg"
-            alt="building"
+            src="/assets/images/footer-right.webp"
+            alt="Laodikya"
             loading="lazy"
             width="2500"
             height="1667"
@@ -147,7 +119,7 @@ import Landing from "@components/Landing.astro";
     }
 
     #cs-contact {
-      font-family: "Roboto", "Arial", sans-serif;
+      font-family: "Roboto", system-ui, sans-serif;
       padding: var(--sectionPadding);
 
       .cs-container {
