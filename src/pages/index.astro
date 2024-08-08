@@ -148,9 +148,8 @@ import projects from "@data/projects.json"
     <div class="cs-container">
       <div class="cs-content">
         <h2 class="cs-title">
-          <span class="cs-color">0₺ Ön Ödeme</span>, Aylık <span
-            class="cs-color">1200₺</span
-          >, Minimum 6 Ay Sözleşme
+          <span class="cs-color">0₺ Ön Ödeme</span>, Aylık Plan, Minimum 6 Ay
+          Sözleşme
         </h2>
         <p class="cs-text">
           Standart 5 sayfalık bir websitesi için ön ödeme yok. Daha fazla sayfa
@@ -297,7 +296,12 @@ import projects from "@data/projects.json"
       {
         projects.map((project) => (
           <li class="project">
-            <a href={project.href} target="_blank" rel="noreferrer2" class="link">
+            <a
+              href={project.href}
+              target="_blank"
+              rel="noreferrer2"
+              class="link"
+            >
               <picture class="picture">
                 <source media="(max-width: 600px)" srcset={project.mobileImg} />
                 <source
