@@ -1,5 +1,8 @@
 User-agent: *
 Disallow: /admin/
+Disallow: /hakkimizda/
+Disallow: /projects/
+Disallow: /reviews/
 Allow: /
 
 Sitemap: https://www.yourwebsite.com/sitemap.xml
