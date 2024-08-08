@@ -4,7 +4,10 @@ import client from "@data/client.json"
 import Landing from "@components/Landing.astro"
 ---
 
-<BaseLayout title="Contact" description="Meta description for the page">
+<BaseLayout
+  title="İletişim"
+  description="Laodikya Web Tasarım ile iletişime geç, işletmen için en iyi dijital çözümleri sunalım."
+>
   <!-- ============================================ -->
   <!--                    LANDING                   -->
   <!-- ============================================ -->
@@ -55,7 +58,7 @@ import Landing from "@components/Landing.astro"
         <span class="cs-header">Email</span>
         <a class="cs-link" href={`mailto:${client.email}`}>{client.email}</a>
         <!--Phone-->
-        <span class="cs-header">Phone</span>
+        <span class="cs-header">Telefon</span>
         <a class="cs-link" href={`tel:${client.phoneForTel}`}
           >{client.phoneFormatted}</a
         >

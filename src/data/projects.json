@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Onur Araç Tattoo Art",
+    "href": "https://onurarac.com",
+    "mobileImg": "/assets/images/projects/onur-arac.webp",
+    "desktopImg": "/assets/images/projects/onur-arac.webp"
+  },
+  {
+    "title": "Uzay Psikoloji",
+    "href": "https://uzaypsikolojidemo.netlify.app",
+    "mobileImg": "/assets/images/projects/uzay-psikoloji.webp",
+    "desktopImg": "/assets/images/projects/uzay-psikoloji.webp"
+  },
+  {
+    "title": "Uzay Mimarlık",
+    "href": "https://uzaymimarlikdemo.netlify.app",
+    "mobileImg": "/assets/images/projects/uzay-mimarlik.webp",
+    "desktopImg": "/assets/images/projects/uzay-mimarlik.webp"
+  },
+  {
+    "title": "Hercules GYM",
+    "href": "https://herculesgymdemo.netlify.app",
+    "mobileImg": "/assets/images/projects/hercules-gym.webp",
+    "desktopImg": "/assets/images/projects/hercules-gym.webp"
+  }
+]

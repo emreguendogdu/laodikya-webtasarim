@@ -94,7 +94,7 @@
       align-items: flex-end;
       position: relative;
       // 3d effect
-      transform: perspective(500px) rotate3d(0, 1, 0,-15deg);
+      transform: perspective(500px) rotate3d(0, 1, 0, -15deg);
 
       img {
         width: 100%;
@@ -506,6 +506,105 @@
 @media only screen and (min-width: 0rem) {
   body.dark-mode {
     #why-choose-892 {
+      &:before {
+        opacity: 0.2;
+        background-color: #000;
+      }
+      .cs-topper {
+        color: var(--primaryLight);
+      }
+
+      .cs-title,
+      .cs-text,
+      .cs-heading3 {
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-item {
+        background-color: var(--accent);
+      }
+
+      .cs-h3,
+      .cs-item-text,
+      .cs-link {
+        color: var(--bodyTextColorWhite);
+      }
+
+      .cs-floater {
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+/*-- -------------------------- -->
+<---         Projects         -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+  #projects {
+    /* Centers Button */
+    text-align: center;
+    padding: var(--sectionPadding);
+    /* prevents the arrow from causing an overflow */
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+
+    .projects-ul {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      list-style: none;
+
+      .link {
+        color: black;
+        text-decoration: none;
+        transition: 0.3s ease-in-out;
+        &:hover {
+          letter-spacing: 0.5px;
+        }
+      }
+
+      .project {
+        position: relative;
+        width: calc(50% - 2rem);
+        margin-bottom: 4rem;
+
+        .title {
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+
+        .picture {
+          position: relative;
+          width: 100%;
+          height: 100%;
+
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+          }
+        }
+      }
+    }
+  }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+  #projects {
+  }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+  body.dark-mode {
+    #projects {
       &:before {
         opacity: 0.2;
         background-color: #000;

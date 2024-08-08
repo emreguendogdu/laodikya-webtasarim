@@ -10,7 +10,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro"
     <!--Nav Logo-->
     <a href="/" class="cs-logo" aria-label="back to home">
       <img
-        src="/assets/svgs/logo-black.svg"
+        src="/assets/images/logo-black.png"
         alt=""
         width="210"
         height="29"
@@ -39,71 +39,78 @@ import DarkModeToggle from "@components/DarkModeToggle.astro"
       <div class="cs-ul-wrapper">
         <ul id="cs-expanded-ul" class="cs-ul">
           {
-            navData.map((entry) => (
-              <li
-                class:list={[
-                  "cs-li",
-                  { "cs-dropdown": entry.children?.length > 0 },
-                ]}
-              >
-                {entry.children?.length > 0 ? (
-                  // If entry has children in navData.json, create a button and a dropdown icon
-                  <button
-                    aria-expanded="false"
-                    aria-controls={`submenu-${entry.key}`}
-                    class:list={[
-                      "cs-li-link cs-dropdown-button",
-                      { "cs-active": Astro.url.pathname.includes(entry.url) },
-                    ]}
-                  >
-                    {entry.key}
-                    <Icon name="mdi--caret" class="cs-drop-icon" />
-                  </button>
-                ) : (
-                  // If entry does not have children in navData.json, create an anchor
-                  <a
-                    href={entry.url}
-                    class:list={[
-                      "cs-li-link",
-                      { "cs-active": Astro.url.pathname === entry.url },
-                    ]}
-                    aria-current={
-                      Astro.url.pathname === entry.url ? "page" : undefined
-                    }
-                  >
-                    {entry.key}
-                  </a>
-                )}
+            navData.map((entry) => {
+              if (entry.key === "İletişim") {
+                return null
+              }
+              return (
+                <li
+                  class:list={[
+                    "cs-li",
+                    { "cs-dropdown": entry.children?.length > 0 },
+                  ]}
+                >
+                  {entry.children?.length > 0 ? (
+                    // If entry has children in navData.json, create a button and a dropdown icon
+                    <button
+                      aria-expanded="false"
+                      aria-controls={`submenu-${entry.key}`}
+                      class:list={[
+                        "cs-li-link cs-dropdown-button",
+                        { "cs-active": Astro.url.pathname.includes(entry.url) },
+                      ]}
+                    >
+                      {entry.key}
+                      <Icon name="mdi--caret" class="cs-drop-icon" />
+                    </button>
+                  ) : (
+                    // If entry does not have children in navData.json, create an anchor
+                    <a
+                      href={entry.url}
+                      class:list={[
+                        "cs-li-link",
+                        { "cs-active": Astro.url.pathname === entry.url },
+                      ]}
+                      aria-current={
+                        Astro.url.pathname === entry.url ? "page" : undefined
+                      }
+                    >
+                      {entry.key}
+                    </a>
+                  )}
 
-                {entry.children?.length > 0 && (
-                  // If entry has children in navData.json, create a drop down menu
-                  <ul id={`submenu-${entry.key}`} class="cs-drop-ul">
-                    {entry.children.map((child) => (
-                      <li class="cs-drop-li">
-                        <a
-                          href={child.url}
-                          class="cs-li-link cs-drop-link"
-                          aria-current={
-                            Astro.url.pathname === child.url
-                              ? "page"
-                              : undefined
-                          }
-                        >
-                          {child.key}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                )}
-              </li>
-            ))
+                  {entry.children?.length > 0 && (
+                    // If entry has children in navData.json, create a drop down menu
+                    <ul id={`submenu-${entry.key}`} class="cs-drop-ul">
+                      {entry.children.map((child) => (
+                        <li class="cs-drop-li">
+                          <a
+                            href={child.url}
+                            class="cs-li-link cs-drop-link"
+                            aria-current={
+                              Astro.url.pathname === child.url
+                                ? "page"
+                                : undefined
+                            }
+                          >
+                            {child.key}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              )
+            })
           }
         </ul>
       </div>
     </nav>
-    <a href="/iletisim/" class="cs-button-solid cs-nav-button">İletişime Geç &gt;</a>
+    <a href="/iletisim/" class="cs-button-solid cs-nav-button"
+      >İletişime Geç &gt;</a
+    >
     <!--Dark Mode toggle: remove component if you don't want to enable a dark mode toggle-->
-    <DarkModeToggle />
+    <!-- <DarkModeToggle /> -->
   </div>
 </header>
 
@@ -211,6 +218,7 @@ import DarkModeToggle from "@components/DarkModeToggle.astro"
         display: flex;
         justify-content: center;
         align-items: center;
+
       }
 
       .cs-active {
@@ -388,7 +396,9 @@ import DarkModeToggle from "@components/DarkModeToggle.astro"
       }
 
       .cs-button-solid {
-        display: none;
+        font-size: (8/16rem);
+        height: auto;
+        padding: .25rem 1rem;
       }
     }
   }

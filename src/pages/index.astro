@@ -2,10 +2,11 @@
 import BaseLayout from "src/layouts/BaseLayout.astro"
 import CTA from "@components/CTA.astro"
 import "@styles/index.less"
+import projects from "@data/projects.json"
 ---
 
 <BaseLayout
-  title="İşletmeniz İçin Web Tasarım | Laodikya Web Tasarım"
+  title="İşletmeniz İçin Web Tasarım | Sosyal Medya Yönetimi | Sosyal Medya Pazarlama"
   description="WordPress ya da başka bir hazır platform yerine, 100% elle kodlanmış, üstün sonuçları olan websiteleri sunuyoruz."
 >
   <!-- ============================================ -->
@@ -285,6 +286,41 @@ import "@styles/index.less"
         aria-hidden="true"
       /> -->
     </div>
+  </section>
+
+  <!-- ============================================ -->
+  <!--                 Projects                   -->
+  <!-- ============================================ -->
+
+  <section id="projects">
+    <ul class="projects-ul">
+      {
+        projects.map((project) => (
+          <li class="project">
+            <a href={project.href} target="_blank" rel="noreferrer2" class="link">
+              <picture class="picture">
+                <source media="(max-width: 600px)" srcset={project.mobileImg} />
+                <source
+                  media="(min-width: 601px)"
+                  srcset={project.desktopImg}
+                />
+                <img
+                  aria-hidden="true"
+                  decoding="async"
+                  src={project.desktopImg}
+                  alt={`${project.title} site ekran görüntüsü`}
+                  width="569"
+                  height="383"
+                />
+              </picture>
+              <div class="content">
+                <h2 class="title">{project.title}</h2>
+              </div>
+            </a>
+          </li>
+        ))
+      }
+    </ul>
   </section>
 
   <CTA />
