@@ -5,6 +5,7 @@ import Header from "@components/Header.astro"
 import Footer from "@components/Footer.astro"
 import "@styles/root.less"
 import "@styles/dark.less"
+import GoogleAnalytics from "@components/GoogleAnalytics.astro"
 
 const { description, title } = Astro.props
 ---
@@ -34,6 +35,10 @@ const { description, title } = Astro.props
       property="og:url"
       content={`https://${client.domain}${Astro.url.pathname}`}
     />
+
+    <!-- Google Analytics -->
+
+    <GoogleAnalytics />
 
     <!-- Og Image -->
     <meta property="og:image" content={`/assets/images/og-logo-m.webp`} />
