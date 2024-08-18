@@ -70,7 +70,7 @@
     width: auto;
     height: (50/16rem);
     padding: 0 (30/16rem);
-    border-radius: 8px;
+    border-radius: 40px;
 
     // Transition Properties
     color: white;
@@ -82,7 +82,7 @@
     transition-delay: 0.1s;
 
     &:hover {
-      color: #fff;
+      color: #f7f7f7;
       &:before {
         width: 100%;
       }
@@ -94,12 +94,14 @@
       //Transition properties
       width: 0;
       height: 100%;
-      background-color: #000;
+      background-color: var(--secondaryLight);
       opacity: 1;
       display: block;
       position: absolute;
       top: 0;
-      left: 0;
+      left: 50%;
+      translate: -50% 0;
+      border-radius: 40px;
       z-index: -1;
       transition: width 0.3s;
     }
